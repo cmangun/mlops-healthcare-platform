@@ -6,9 +6,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FDA 21 CFR Part 11](https://img.shields.io/badge/FDA-21_CFR_Part_11-blue.svg)](#compliance)
 
-**Enterprise MLOps platform for healthcare with FDA 21 CFR Part 11 compliance, automated model validation, and complete audit trails.**
+Enterprise MLOps platform for healthcare with FDA 21 CFR Part 11 compliance, automated model validation, and complete audit trails.
 
-## 🎯 Business Impact
+## Business Impact
 
 | Metric | Improvement | How |
 |--------|-------------|-----|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TB
@@ -75,29 +75,29 @@ flowchart TB
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 🏛️ FDA 21 CFR Part 11 Compliance
+### FDA 21 CFR Part 11 Compliance
 - **Electronic signatures** with identity verification
 - **Audit trails** for all model changes
 - **Access controls** with role-based permissions
 - **Data integrity** with hash verification
 - Pre-built validation documentation templates
 
-### 📋 Automated Validation Protocols
+### Automated Validation Protocols
 - **IQ (Installation Qualification)**: Environment validation
 - **OQ (Operational Qualification)**: Functional testing
 - **PQ (Performance Qualification)**: Statistical validation
 - Automated test execution and reporting
 
-### 📊 Statistical Validation Suite
+### Statistical Validation Suite
 - Population Stability Index (PSI)
 - Kolmogorov-Smirnov tests
 - AUC-ROC confidence intervals
 - Calibration curve analysis
 - Fairness metrics (demographic parity, equalized odds)
 
-### 🔍 Model Monitoring
+### Model Monitoring
 - Real-time drift detection
 - Performance degradation alerts
 - Input distribution monitoring
@@ -105,7 +105,7 @@ flowchart TB
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.11+
@@ -134,7 +134,7 @@ mlflow server --backend-store-uri postgresql://user:pass@localhost/mlflow \
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Train with Automatic Tracking
 
@@ -228,7 +228,7 @@ package.save("submission/510k_package.pdf")
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 mlops-healthcare-platform/
@@ -262,7 +262,7 @@ mlops-healthcare-platform/
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -277,7 +277,7 @@ pytest --cov=src --cov-report=html
 
 ---
 
-## 📊 Validation Metrics Reference
+## Validation Metrics Reference
 
 | Metric | Threshold | Description |
 |--------|-----------|-------------|
@@ -289,19 +289,19 @@ pytest --cov=src --cov-report=html
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
-## 📜 License
+## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 👤 Author
+## Author
 
 **Christopher Mangun** - Forward Deployed Engineer  
 - GitHub: [@cmangun](https://github.com/cmangun)
@@ -309,7 +309,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 🔗 Related Projects
+## Related Projects
 
 - [healthcare-rag-platform](https://github.com/cmangun/healthcare-rag-platform) - HIPAA-compliant RAG
 - [clinical-nlp-pipeline](https://github.com/cmangun/clinical-nlp-pipeline) - Medical NLP processing
