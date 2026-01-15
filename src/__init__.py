@@ -1,6 +1,29 @@
-"""MLOps Healthcare Platform - Enterprise model governance and drift detection."""
-from src.registry.model_registry import ModelRegistry, ModelType, ModelStage
-from src.monitoring.drift_detection import DriftDetector
+"""
+MLOps Healthcare Platform
 
-__version__ = "1.0.0"
-__all__ = ["ModelRegistry", "ModelType", "ModelStage", "DriftDetector"]
+Enterprise MLOps platform for healthcare with FDA 21 CFR Part 11 compliance,
+automated model validation, and complete audit trails.
+"""
+
+__version__ = "0.1.0"
+
+from .validation import (
+    IQValidator,
+    OQValidator,
+    PQValidator,
+    StatisticalValidator,
+    ValidationReportGenerator,
+)
+from .training import HealthcareTrainer, HyperparameterOptimizer
+
+__all__ = [
+    # Validation
+    "IQValidator",
+    "OQValidator",
+    "PQValidator",
+    "StatisticalValidator",
+    "ValidationReportGenerator",
+    # Training
+    "HealthcareTrainer",
+    "HyperparameterOptimizer",
+]
