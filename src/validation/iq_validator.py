@@ -7,14 +7,14 @@ according to FDA 21 CFR Part 11 requirements.
 
 import hashlib
 import platform
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
+from importlib import metadata
 from pathlib import Path
 from typing import Any
 
-import pkg_resources
+from packaging.specifiers import SpecifierSet
 
 
 @dataclass
@@ -149,12 +149,9 @@ class IQValidator:
         """Validate all required packages are installed with correct versions."""
         for package, version_req in self.required_packages.items():
             try:
-                installed = pkg_resources.get_distribution(package)
-                actual_version = installed.version
-                
-                # Check version requirement
-                req = pkg_resources.Requirement.parse(f"{package}{version_req}")
-                passed = installed in req
+                distribution = metadata.distribution(package)
+                actual_version = distribution.version
+                passed = SpecifierSet(version_req).contains(actual_version)
                 
                 self.checks.append(
                     IQCheckResult(
@@ -162,10 +159,10 @@ class IQValidator:
                         passed=passed,
                         expected=version_req,
                         actual=actual_version,
-                        details=f"Location: {installed.location}",
+                        details=f"Location: {distribution.locate_file('')}",
                     )
                 )
-            except pkg_resources.DistributionNotFound:
+            except metadata.PackageNotFoundError:
                 self.checks.append(
                     IQCheckResult(
                         check_name=f"package_{package}",
@@ -248,8 +245,9 @@ class IQValidator:
                 "processor": platform.processor(),
             },
             "packages": {
-                dist.key: dist.version
-                for dist in pkg_resources.working_set
+                dist.metadata["Name"]: dist.version
+                for dist in metadata.distributions()
+                if dist.metadata["Name"]
             },
         }
     

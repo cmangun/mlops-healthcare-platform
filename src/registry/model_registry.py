@@ -69,11 +69,11 @@ class RegisteredModel:
     model_type: ModelType
     stage: ModelStage
     artifact_uri: str
+    created_at: datetime
+    created_by: str
     metrics: ModelMetrics | None = None
     lineage: ModelLineage | None = None
     model_card: "ModelCard" | None = None
-    created_at: datetime
-    created_by: str
     last_updated_at: datetime = field(default_factory=datetime.utcnow)
 
 
